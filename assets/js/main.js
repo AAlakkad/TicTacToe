@@ -18,8 +18,11 @@ function isWinner() {};
 $(document).ready(function() {
     var turn = false;
     var currentTurn, nextTurn;
-    $('.grid .block:not(.red, .blue) > a').click(function(e) {
+    $('.grid .block > a').click(function(e) {
         e.preventDefault();
+        if($(this).parent().parent().hasClass('red') || $(this).parent().parent().hasClass('blue')) {
+            return;
+        }
         currentTurn = turn === true ? 1 : 0;
         nextTurn = turn === true ? 0 : 1;
         // Change turn text in the page
@@ -35,7 +38,9 @@ $(document).ready(function() {
         e.preventDefault();
         $('.grid .block > a').html('&nbsp;');
         turn = false;
-        nextTurn = turn === true ? 1 : 0;
-        $('.turn-text p > strong').text(turns[nextTurn]);
+        currentTurn = turn === true ? 1 : 0;
+        nextTurn = turn === true ? 0 : 1;
+        $('.turn-text p > strong').text(turns[currentTurn]);
+        $('.grid .block').parent().removeClass('red').removeClass('blue');
     });
 });
