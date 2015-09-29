@@ -1,0 +1,27 @@
+.grid {
+  line-height: 2;
+  font-size: 60px;
+  font-family: monospace;
+}
+.grid .col-xs-4 {
+    padding: 1px;
+}
+.grid a {
+  display: block;
+  color: #555;
+  text-decoration: none;
+}
+.grid .block {
+  border: 1px solid #ccc;
+  background: #fdfdfd;
+}
+.grid .block:hover {
+  background: #f5f5f5;
+}
+.grid .red a {
+  color: #EF5555;
+}
+.grid .blue a {
+  color: #5555EF;
+}
+
