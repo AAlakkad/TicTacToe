@@ -7,9 +7,10 @@ var grid = [
     [null, null, null],
 ];
 
+var turn = false;
+var currentTurn, nextTurn;
+
 $(document).ready(function() {
-    var turn = false;
-    var currentTurn, nextTurn;
     $('.grid .block > a').click(function(e) {
         e.preventDefault();
         var $parent = $(this).parent().parent();
