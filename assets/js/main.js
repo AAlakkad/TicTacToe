@@ -24,12 +24,15 @@ $(document).ready(function() {
             y = $(this).data('y');
         var fillResult = fillField(x, y, currentTurn);
         if (fillResult !== false) {
-        // Change turn text in the page
-        $('.turn-text p > strong').text(turns[nextTurn]);
-        $(this).html(turns[currentTurn]);
-        $parent.addClass(turnClass[currentTurn]);
-        // Change turn
-        turn = ! turn;
+            // @TODO check if there's a winner
+            // Change turn text in the page
+            $('.turn-text p > strong').text(turns[nextTurn]);
+            $(this).html(turns[currentTurn]);
+            $parent.addClass(turnClass[currentTurn]);
+            // Change turn
+            turn = ! turn;
+            // @TODO if it's o turn then make a random move
+            // @TODO check for available moves
         }
     });
 
@@ -51,7 +54,9 @@ $(document).ready(function() {
     });
 });
 
-function check() {};
+function checkForAvailableMoves() {};
+
+function doRandomMove() {};
 
 function loop() {};
 
