@@ -42,6 +42,12 @@ $(document).ready(function() {
         nextTurn = turn === true ? 0 : 1;
         $('.turn-text p > strong').text(turns[currentTurn]);
         $('.grid .block').parent().removeClass('red').removeClass('blue');
+        // reset grid variable
+        grid = [
+            [null, null, null],
+            [null, null, null],
+            [null, null, null],
+        ];
     });
 });
 
@@ -50,7 +56,7 @@ function check() {};
 function loop() {};
 
 function fillField(x, y, turn) {
-    if (grid[x][y] === null) {
+    if (grid[x][y] !== null) {
         return false;
     }
     grid[x][y] = turn;
